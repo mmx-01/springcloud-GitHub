@@ -2,7 +2,6 @@ package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
-import io.micrometer.core.instrument.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,6 +46,7 @@ public class OrderController {
         if (id == null) {
             log.info("传入参数为空，请检查");
         }
+        log.info("查询的结果为：" +restTemplate.getForObject(PAYMENT_URL + "/payment/get/"  + id, CommonResult.class).getData() );
         return restTemplate.getForObject(PAYMENT_URL + "/payment/get/"  + id, CommonResult.class);
     }
 
