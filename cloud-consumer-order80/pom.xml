@@ -25,6 +25,12 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
+<!--        引入Eureka的jra包，作为clien端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
 
         <!--https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
         <dependency>
