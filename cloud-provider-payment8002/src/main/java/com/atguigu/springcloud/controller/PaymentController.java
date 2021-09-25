@@ -1,4 +1,5 @@
 package com.atguigu.springcloud.controller;
+import cn.hutool.log.Log;
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import com.atguigu.springcloud.service.PaymentService;
@@ -18,6 +19,7 @@ import javax.annotation.Resource;
 public class PaymentController {
     @Resource
     private PaymentService paymentService;
+
     @Value("${server.port}")
     private String serverPort;
     @PostMapping ("/payment/create")
@@ -46,7 +48,7 @@ public class PaymentController {
         Payment paymentById = paymentService.getPaymentById(id);
         System.out.println("paymentById = " + paymentById);
         if (paymentById != null) {
-            return new CommonResult(200 , "查询成功 , 访问的端口号为 " + serverPort , paymentById);
+            return new CommonResult(200 , "查询成功 , 访问的端口号为：" + serverPort , paymentById);
         }else  {
             return new CommonResult(400 , "查询失败,没有对应的数据，查询id为：" + id , null);
         }

@@ -22,4 +22,9 @@
         SELECT * FROM payment WHERE id = #{id}
     </select>
 
+    <delete id="deleteById" parameterType="Long">
+        DELETE FROM payment WHERE id = #{id}
+    </delete>
+
+
 </mapper>

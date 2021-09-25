@@ -13,4 +13,5 @@ eureka:
     fetch-registry: true
     service-url:
       #注册中心地址,将服务注册到改地址
-      defaultZone: http://localhost:7001/eureka
+#      defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/

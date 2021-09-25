@@ -26,5 +26,4 @@
         DELETE FROM payment WHERE id = #{id}
     </delete>
 
-
 </mapper>

@@ -1,9 +1,8 @@
-package com.atguigu.springcloud.impl;
+package com.atguigu.springcloud.service.impl;
 
 import com.atguigu.springcloud.dao.PaymentDao;
 import com.atguigu.springcloud.entities.Payment;
 import com.atguigu.springcloud.service.PaymentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -27,5 +26,13 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public Payment getPaymentById(Long id) {
         return paymentDao.getPaymentById(id);
+    }
+
+    @Override
+    public int deleteById(Long id) {
+        if (paymentDao.deleteById(id) == 0) {
+            return 1;
+        }
+        return -1;
     }
 }

@@ -15,5 +15,4 @@ public interface PaymentService {
     public Payment getPaymentById (@Param("id") Long id);
 
     public int deleteById (@Param("id") Long id);
-
 }
